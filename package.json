@@ -1,0 +1,48 @@
+{
+  "name": "webpack-hook-attacher-plugin",
+  "description": "This Webpack plugin allows you to attach (file, system or own written) operations to any webpack hooks such as sleep, wait, delete/create/modify files or directories, merge json files and many more before, after and in the middle of the builds",
+  "version": "1.0.0",
+  "author": {
+    "name": "Roland Szikora"
+  },
+  "bugs": {
+    "url": "https://github.com/rszik/webpack-hook-attacher-plugin/issues"
+  },
+  "homepage": "https://github.com/rszik/webpack-hook-attacher-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rszik/webpack-hook-attacher-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+	"hook",
+	"attach",
+	"file",
+	"directory",
+	"merge",
+	"sleep",
+	"copy",
+	"delete",
+	"move",
+	"modify",
+  ],
+  "license": "MIT",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+	"publish": "npm publish --access public"
+  },  
+  "bundleDependencies": false,
+  "deprecated": false,
+  "devDependencies": {
+    "@types/node": "13.11.1",
+    "@types/webpack": "4.41.6",
+    "colors": "1.4.0",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "webpack": "4.41.6"
+  }
+}
