@@ -1,0 +1,157 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const options_1 = require("./options");
+class CompilationHookNames {
+    constructor() {
+        this.buildModule = 'buildModule';
+        this.rebuildModule = 'rebuildModule';
+        this.failedModule = 'failedModule';
+        this.succeedModule = 'succeedModule';
+        this.finishModules = 'finishModules';
+        this.finishRebuildingModule = 'finishRebuildingModule';
+        this.seal = 'seal';
+        this.unseal = 'unseal';
+        this.optimizeDependencies = 'optimizeDependencies';
+        this.afterOptimizeDependencies = 'afterOptimizeDependencies';
+        this.optimize = 'optimize';
+        this.optimizeModules = 'optimizeModules';
+        this.afterOptimizeModules = 'afterOptimizeModules';
+        this.optimizeChunks = 'optimizeChunks';
+        this.afterOptimizeChunks = 'afterOptimizeChunks';
+        this.optimizeTree = 'optimizeTree';
+        this.afterOptimizeTree = 'afterOptimizeTree';
+        this.optimizeChunkModules = 'optimizeChunkModules';
+        this.afterOptimizeChunkModules = 'afterOptimizeChunkModules';
+        this.shouldRecord = 'shouldRecord';
+        this.reviveModules = 'reviveModules';
+        this.beforeModuleIds = 'beforeModuleIds';
+        this.moduleIds = 'moduleIds';
+        this.optimizeModuleIds = 'optimizeModuleIds';
+        this.afterOptimizeModuleIds = 'afterOptimizeModuleIds';
+        this.reviveChunks = 'reviveChunks';
+        this.beforeChunkIds = 'beforeChunkIds';
+        this.optimizeChunkIds = 'optimizeChunkIds';
+        this.afterOptimizeChunkIds = 'afterOptimizeChunkIds';
+        this.recordModules = 'recordModules';
+        this.recordChunks = 'recordChunks';
+        this.beforeHash = 'beforeHash';
+        this.afterHash = 'afterHash';
+        this.recordHash = 'recordHash';
+        this.record = 'record';
+        this.beforeModuleAssets = 'beforeModuleAssets';
+        this.additionalChunkAssets = 'additionalChunkAssets';
+        this.shouldGenerateChunkAssets = 'shouldGenerateChunkAssets';
+        this.beforeChunkAssets = 'beforeChunkAssets';
+        this.additionalAssets = 'additionalAssets';
+        this.optimizeChunkAssets = 'optimizeChunkAssets';
+        this.afterOptimizeChunkAssets = 'afterOptimizeChunkAssets';
+        this.optimizeAssets = 'optimizeAssets';
+        this.afterOptimizeAssets = 'afterOptimizeAssets';
+        this.needAdditionalSeal = 'needAdditionalSeal';
+        this.afterSeal = 'afterSeal';
+        this.chunkHash = 'chunkHash';
+        this.moduleAsset = 'moduleAsset';
+        this.chunkAsset = 'chunkAsset';
+        this.assetPath = 'assetPath';
+        this.needAdditionalPass = 'needAdditionalPass';
+        this.childCompiler = 'childCompiler';
+    }
+    static get i() {
+        return new CompilationHookNames();
+    }
+}
+exports.CompilationHookNames = CompilationHookNames;
+class CompilationHookParameters {
+    constructor() {
+        this.module = null;
+        this.error = null;
+        this.modules = null;
+        this.chunks = null;
+        this.chunkGroups = null;
+        this.records = null;
+        this.compilation = null;
+        this.assets = null;
+        this.chunk = null;
+        this.chunkHash = null;
+        this.fileName = null;
+        this.path = null;
+        this.options = null;
+        this.childCompiler = null;
+        this.compilerName = null;
+        this.compilerIndex = null;
+    }
+}
+exports.CompilationHookParameters = CompilationHookParameters;
+CompilationHookParameters.MODULE = 'module';
+CompilationHookParameters.ERROR = 'error';
+CompilationHookParameters.MODULES = 'modules';
+CompilationHookParameters.CHUNKS = 'chunks';
+CompilationHookParameters.CHUNK_GROUPS = 'chunkGroups';
+CompilationHookParameters.RECORDS = 'records';
+CompilationHookParameters.COMPILATION = 'compilation';
+CompilationHookParameters.ASSETS = 'assets';
+CompilationHookParameters.CHUNK = 'chunk';
+CompilationHookParameters.CHUNK_HASH = 'chunkHash';
+CompilationHookParameters.FILE_NAME = 'fileName';
+CompilationHookParameters.PATH = 'path';
+CompilationHookParameters.OPTIONS = 'options';
+CompilationHookParameters.CHILD_COMPILER = 'childCompiler';
+CompilationHookParameters.COMPILER_NAME = 'compilerName';
+CompilationHookParameters.COMPILER_INDEX = 'compilerIndex';
+class CompilationHookInitializer {
+    static initHooks(container) {
+        container.buildModule = new options_1.CompilationHook(container, CompilationHookNames.i.buildModule, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE]);
+        container.rebuildModule = new options_1.CompilationHook(container, CompilationHookNames.i.rebuildModule, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE]);
+        container.failedModule = new options_1.CompilationHook(container, CompilationHookNames.i.failedModule, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE, CompilationHookParameters.ERROR]);
+        container.succeedModule = new options_1.CompilationHook(container, CompilationHookNames.i.succeedModule, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE]);
+        container.finishModules = new options_1.CompilationHook(container, CompilationHookNames.i.finishModules, options_1.WebpackHookType.AsyncSeriesHook, [CompilationHookParameters.MODULES]);
+        container.finishRebuildingModule = new options_1.CompilationHook(container, CompilationHookNames.i.finishRebuildingModule, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE]);
+        container.seal = new options_1.CompilationHook(container, CompilationHookNames.i.seal, options_1.WebpackHookType.SyncHook, []);
+        container.unseal = new options_1.CompilationHook(container, CompilationHookNames.i.unseal, options_1.WebpackHookType.SyncHook, []);
+        container.optimizeDependencies = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeDependencies, options_1.WebpackHookType.SyncBailHook, [CompilationHookParameters.MODULES]);
+        container.afterOptimizeDependencies = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeDependencies, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.optimize = new options_1.CompilationHook(container, CompilationHookNames.i.optimize, options_1.WebpackHookType.SyncHook, []);
+        container.optimizeModules = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeModules, options_1.WebpackHookType.SyncBailHook, [CompilationHookParameters.MODULES]);
+        container.afterOptimizeModules = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeModules, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.optimizeChunks = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeChunks, options_1.WebpackHookType.SyncBailHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.CHUNK_GROUPS]);
+        container.afterOptimizeChunks = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeChunks, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.CHUNK_GROUPS]);
+        container.optimizeTree = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeTree, options_1.WebpackHookType.AsyncSeriesHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.MODULES]);
+        container.afterOptimizeTree = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeTree, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.MODULES]);
+        container.optimizeChunkModules = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeChunkModules, options_1.WebpackHookType.SyncBailHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.MODULES]);
+        container.afterOptimizeChunkModules = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeChunkModules, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.MODULES]);
+        container.shouldRecord = new options_1.CompilationHook(container, CompilationHookNames.i.shouldRecord, options_1.WebpackHookType.SyncBailHook, []);
+        container.reviveModules = new options_1.CompilationHook(container, CompilationHookNames.i.reviveModules, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES, CompilationHookParameters.RECORDS]);
+        container.beforeModuleIds = new options_1.CompilationHook(container, CompilationHookNames.i.beforeModuleIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.moduleIds = new options_1.CompilationHook(container, CompilationHookNames.i.moduleIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.optimizeModuleIds = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeModuleIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.afterOptimizeModuleIds = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeModuleIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES]);
+        container.reviveChunks = new options_1.CompilationHook(container, CompilationHookNames.i.reviveChunks, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.RECORDS]);
+        container.beforeChunkIds = new options_1.CompilationHook(container, CompilationHookNames.i.beforeChunkIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS]);
+        container.optimizeChunkIds = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeChunkIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS]);
+        container.afterOptimizeChunkIds = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeChunkIds, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS]);
+        container.recordModules = new options_1.CompilationHook(container, CompilationHookNames.i.recordModules, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULES, CompilationHookParameters.RECORDS]);
+        container.recordChunks = new options_1.CompilationHook(container, CompilationHookNames.i.recordChunks, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS, CompilationHookParameters.RECORDS]);
+        container.beforeHash = new options_1.CompilationHook(container, CompilationHookNames.i.beforeHash, options_1.WebpackHookType.SyncHook, []);
+        container.afterHash = new options_1.CompilationHook(container, CompilationHookNames.i.afterHash, options_1.WebpackHookType.SyncHook, []);
+        container.recordHash = new options_1.CompilationHook(container, CompilationHookNames.i.recordHash, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.RECORDS]);
+        container.record = new options_1.CompilationHook(container, CompilationHookNames.i.record, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.COMPILATION, CompilationHookParameters.RECORDS]);
+        container.beforeModuleAssets = new options_1.CompilationHook(container, CompilationHookNames.i.beforeModuleAssets, options_1.WebpackHookType.SyncHook, []);
+        container.additionalChunkAssets = new options_1.CompilationHook(container, CompilationHookNames.i.additionalChunkAssets, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS]);
+        container.shouldGenerateChunkAssets = new options_1.CompilationHook(container, CompilationHookNames.i.shouldGenerateChunkAssets, options_1.WebpackHookType.SyncBailHook, []);
+        container.beforeChunkAssets = new options_1.CompilationHook(container, CompilationHookNames.i.beforeChunkAssets, options_1.WebpackHookType.SyncHook, []);
+        container.additionalAssets = new options_1.CompilationHook(container, CompilationHookNames.i.additionalAssets, options_1.WebpackHookType.AsyncSeriesHook, []);
+        container.optimizeChunkAssets = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeChunkAssets, options_1.WebpackHookType.AsyncSeriesHook, [CompilationHookParameters.CHUNKS]);
+        container.afterOptimizeChunkAssets = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeChunkAssets, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNKS]);
+        container.optimizeAssets = new options_1.CompilationHook(container, CompilationHookNames.i.optimizeAssets, options_1.WebpackHookType.AsyncSeriesHook, [CompilationHookParameters.ASSETS]);
+        container.afterOptimizeAssets = new options_1.CompilationHook(container, CompilationHookNames.i.afterOptimizeAssets, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.ASSETS]);
+        container.needAdditionalSeal = new options_1.CompilationHook(container, CompilationHookNames.i.needAdditionalSeal, options_1.WebpackHookType.SyncBailHook, []);
+        container.afterSeal = new options_1.CompilationHook(container, CompilationHookNames.i.afterSeal, options_1.WebpackHookType.AsyncSeriesHook, []);
+        container.chunkHash = new options_1.CompilationHook(container, CompilationHookNames.i.chunkHash, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNK, CompilationHookParameters.CHUNK_HASH]);
+        container.moduleAsset = new options_1.CompilationHook(container, CompilationHookNames.i.moduleAsset, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.MODULE, CompilationHookParameters.FILE_NAME]);
+        container.chunkAsset = new options_1.CompilationHook(container, CompilationHookNames.i.chunkAsset, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHUNK, CompilationHookParameters.FILE_NAME]);
+        container.assetPath = new options_1.CompilationHook(container, CompilationHookNames.i.assetPath, options_1.WebpackHookType.SyncWaterfallHook, [CompilationHookParameters.PATH, CompilationHookParameters.OPTIONS]);
+        container.needAdditionalPass = new options_1.CompilationHook(container, CompilationHookNames.i.needAdditionalPass, options_1.WebpackHookType.SyncBailHook, []);
+        container.childCompiler = new options_1.CompilationHook(container, CompilationHookNames.i.childCompiler, options_1.WebpackHookType.SyncHook, [CompilationHookParameters.CHILD_COMPILER, CompilationHookParameters.COMPILER_NAME, CompilationHookParameters.COMPILER_INDEX]);
+    }
+}
+exports.CompilationHookInitializer = CompilationHookInitializer;
