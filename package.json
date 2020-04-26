@@ -24,6 +24,7 @@
     "file",
     "directory",
     "merge",
+    "json",
     "sleep",
     "copy",
     "delete",
@@ -32,13 +33,12 @@
   ],
   "license": "MIT",
   "private": false,
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "publish": "npm publish --access public"
   },
-  "bundleDependencies": false,
   "deprecated": false,
   "devDependencies": {
     "@types/node": "13.11.1",

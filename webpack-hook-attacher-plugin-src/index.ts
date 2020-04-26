@@ -203,4 +203,5 @@ export class HookOperationManagerPlugin {
 
 export { Options } from './options';
 export { TapType } from './operation-base-classes';
-export { ConsoleLogger } from './classes/console-logger';
+export * from './operation-base-classes';
+export * from './classes';

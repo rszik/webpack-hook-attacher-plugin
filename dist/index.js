@@ -1,4 +1,7 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
 const classes_1 = require("./classes");
 const options_1 = require("./options");
@@ -182,5 +185,5 @@ var options_2 = require("./options");
 exports.Options = options_2.Options;
 var operation_base_classes_2 = require("./operation-base-classes");
 exports.TapType = operation_base_classes_2.TapType;
-var console_logger_1 = require("./classes/console-logger");
-exports.ConsoleLogger = console_logger_1.ConsoleLogger;
+__export(require("./operation-base-classes"));
+__export(require("./classes"));
