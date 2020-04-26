@@ -13,18 +13,22 @@
     "type": "git",
     "url": "git+https://github.com/rszik/webpack-hook-attacher-plugin.git"
   },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/rolandszik"
+  },
   "keywords": [
     "webpack",
-	"hook",
-	"attach",
-	"file",
-	"directory",
-	"merge",
-	"sleep",
-	"copy",
-	"delete",
-	"move",
-	"modify",
+    "hook",
+    "attach",
+    "file",
+    "directory",
+    "merge",
+    "sleep",
+    "copy",
+    "delete",
+    "move",
+    "modify"
   ],
   "license": "MIT",
   "private": false,
@@ -32,8 +36,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-	"publish": "npm publish --access public"
-  },  
+    "publish": "npm publish --access public"
+  },
   "bundleDependencies": false,
   "deprecated": false,
   "devDependencies": {
