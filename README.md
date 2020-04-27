@@ -8,9 +8,9 @@ If you have found bug or need an additional operation don't hesitate to contact 
 `npm install webpack-hook-attacher-plugin --save-dev `
 
 ## Use Opertaions 
-You can attach pre written opertaions to any webpack hook during the webpack or webpack-dev-server build
-[file operation](https://www.npmjs.com/package/webpack-file-operations) or
-[systems operation](https://www.npmjs.com/package/webpack-system-operations)
+You can attach pre written opertaions to any webpack hook during the webpack or webpack-dev-server build from 
+[file operations](https://www.npmjs.com/package/webpack-file-operations) or
+[system operations](https://www.npmjs.com/package/webpack-system-operations)
 
 such as 
 - create file/directory
