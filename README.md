@@ -25,6 +25,8 @@ such as
 
 #### Usage
 
+Webpack.config.js:
+
 ```
 import {
     WebpackHookAttacherPlugin,
