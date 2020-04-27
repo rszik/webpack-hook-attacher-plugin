@@ -1,7 +1,7 @@
 # webpack-hook-attacher-plugin Summary
 This Webpack plugin allows you to attach (file, system or own written) operations to any webpack hooks such as sleep, wait, delete/create/modify files or directories, merge json files and many more before, after and in the middle of the builds
 
-## I can do better :)
+## I know I can do better :)
 If you have found bug or need an additional operation don't hesitate to contact me.
 
 ## Install
