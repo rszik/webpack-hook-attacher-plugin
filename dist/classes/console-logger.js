@@ -6,7 +6,7 @@ class ConsoleLogger {
     static consoleDebug(text, obj, forceLog = false) {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent && ConsoleLogger.verbose) {
-            console.log(colors.brightWhite('HookOperationManagerPlugin - Debug\n') + colors.brightWhite(text));
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - Debug\n') + colors.brightWhite(text));
             if (obj) {
                 console.log(colors.brightGreen(_1.Utils.formattedJSONStringify(obj)));
             }
@@ -15,7 +15,7 @@ class ConsoleLogger {
     static consoleInfo(text, obj, forceLog = false) {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent) {
-            console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text));
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text));
             if (obj) {
                 console.log(colors.brightGreen(_1.Utils.formattedJSONStringify(obj)));
             }
@@ -23,14 +23,14 @@ class ConsoleLogger {
     }
     static consoleWarning(text, obj) {
         ConsoleLogger.clearCurrentCursorLine();
-        console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightYellow('Warning - ') + colors.brightYellow(text));
+        console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightYellow('Warning - ') + colors.brightYellow(text));
         if (obj) {
             console.log(colors.brightYellow(_1.Utils.formattedJSONStringify(obj)));
         }
     }
     static consoleError(text, obj) {
         ConsoleLogger.clearCurrentCursorLine();
-        console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightRed('Error   - ') + colors.brightRed(text));
+        console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightRed('Error   - ') + colors.brightRed(text));
         if (obj) {
             console.log(colors.brightRed(_1.Utils.formattedJSONStringify(obj)));
         }

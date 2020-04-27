@@ -13,7 +13,7 @@ export class ConsoleLogger {
     public static consoleDebug(text: string, obj?: any, forceLog: boolean = false): void {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent && ConsoleLogger.verbose) {
-            console.log(colors.brightWhite('HookOperationManagerPlugin - Debug\n') +  colors.brightWhite(text));
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - Debug\n') +  colors.brightWhite(text));
             if (obj) {
                 console.log(colors.brightGreen(Utils.formattedJSONStringify(obj)));
             }
@@ -23,7 +23,7 @@ export class ConsoleLogger {
     public static consoleInfo(text: string, obj?: any, forceLog: boolean = false): void {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent) {
-            console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text) );
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text) );
             if (obj) {
                 console.log(colors.brightGreen(Utils.formattedJSONStringify(obj)));
             }
@@ -32,7 +32,7 @@ export class ConsoleLogger {
 
     public static consoleWarning(text: string, obj?: any): void {
         ConsoleLogger.clearCurrentCursorLine();
-        console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightYellow('Warning - ') + colors.brightYellow(text));
+        console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightYellow('Warning - ') + colors.brightYellow(text));
         if (obj) {
             console.log(colors.brightYellow(Utils.formattedJSONStringify(obj)));
         }
@@ -40,7 +40,7 @@ export class ConsoleLogger {
 
     public static consoleError(text: string, obj?: any): void {
         ConsoleLogger.clearCurrentCursorLine();
-        console.log(colors.brightWhite('HookOperationManagerPlugin - ') + colors.brightRed('Error   - ') + colors.brightRed(text));
+        console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightRed('Error   - ') + colors.brightRed(text));
         if (obj) {
             console.log(colors.brightRed(Utils.formattedJSONStringify(obj)));
         }

@@ -7,7 +7,7 @@ const classes_1 = require("./classes");
 const options_1 = require("./options");
 const operation_base_classes_1 = require("./operation-base-classes");
 const operation_1 = require("./operation-base-classes/operation");
-class HookOperationManagerPlugin {
+class WebpackHookAttacherPlugin {
     constructor(userOptions) {
         this.options = classes_1.Utils.mergeUserSettingsToDeafultSetting(userOptions, new options_1.Options());
         classes_1.ConsoleLogger.verbose = this.options.verbose;
@@ -180,7 +180,7 @@ class HookOperationManagerPlugin {
         return res;
     }
 }
-exports.HookOperationManagerPlugin = HookOperationManagerPlugin;
+exports.WebpackHookAttacherPlugin = WebpackHookAttacherPlugin;
 var options_2 = require("./options");
 exports.Options = options_2.Options;
 var operation_base_classes_2 = require("./operation-base-classes");

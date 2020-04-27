@@ -12,7 +12,7 @@ import { HookType } from './operation-base-classes/operation';
 //https://stackoverflow.com/questions/59116099/why-does-webpack-dev-server-not-execute-compiler-hook
 //TODO: add parameter to the options (mode: run/watch), and throw warning if the hook won't run in the given mode
 
-export class HookOperationManagerPlugin {
+export class WebpackHookAttacherPlugin {
 
     private options: Options;
     private compilerInstance: compiler.Compiler;

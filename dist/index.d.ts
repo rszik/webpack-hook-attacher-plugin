@@ -1,5 +1,5 @@
 import { Options } from './options';
-export declare class HookOperationManagerPlugin {
+export declare class WebpackHookAttacherPlugin {
     private options;
     private compilerInstance;
     constructor(userOptions: Options);
