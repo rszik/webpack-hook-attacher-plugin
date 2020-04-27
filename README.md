@@ -98,6 +98,9 @@ public static getAppModuleWebpackHookAttacherPlugin(): WebpackHookAttacherPlugin
         dirPathToMake: './AdditionalDirectory'
     })
   );
+
+  let instance: WebpackHookAttacherPlugin = new WebpackHookAttacherPlugin(options);
+  return instance;
 }
 
 private static getMergeJSONFilesOperations(): MergeJSONFiles[] {
@@ -114,6 +117,16 @@ private static getMergeJSONFilesOperations(): MergeJSONFiles[] {
 
     return res;
 }
+
+...
+//somewhere in the webpack config
+...
+ plugins: [
+    ...
+    getAppModuleWebpackHookAttacherPlugin()
+    ...
+]
+...
 ```
 
 ## Write your own operation
