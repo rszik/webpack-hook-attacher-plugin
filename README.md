@@ -27,7 +27,7 @@ such as
 
 Webpack.config.js:
 
-```
+```ts
 import {
     WebpackHookAttacherPlugin,
     Options    
@@ -114,7 +114,7 @@ You can write your own operation if you like. Create your Operation file (derive
 
 #### Example
 
-```
+```ts
 import * as fsExtra from 'fs-extra';
 
 import { SingleSourceOperationParameter, SingleSourceOperation, ISingleSourceOperationParameter } from './single-source-operation';
