@@ -90,6 +90,14 @@ public static getAppModuleWebpackHookAttacherPlugin(): WebpackHookAttacherPlugin
         })
     );
   }
+  
+  //You can attach operation to the inner Compilation, or JsParser hooks if those exist in the given Compiler hook
+  options.compilation.finishModules.addOperations(
+    new MkDir({
+        additionalName: 'Create addtional directory',
+        dirPathToMake: './AdditionalDirectory'
+    })
+  );
 }
 
 private static getMergeJSONFilesOperations(): MergeJSONFiles[] {
