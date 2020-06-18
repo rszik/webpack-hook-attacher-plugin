@@ -1,5 +1,6 @@
-.svn
-package-lock.json
+.git
 node_modules
 node_modules.zip
 publish.bat
+_docs
+_third_party_sources
