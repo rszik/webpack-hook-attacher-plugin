@@ -1,4 +1,4 @@
-import { JavascriptParserHook, WebpackHookType} from './options';
+import { JavascriptParserHook, WebpackHookType } from './options';
 
 // https://webpack.js.org/api/parser/#hooks
 
@@ -102,217 +102,183 @@ export class JavascriptParserHookInitializer {
     //todo: add a boolean property: forIsRequired, and on tap check if javascriptParserHookForParameter is set
     public static initHooks(container: IJavascriptParserHooksContainer): void {
         container.evaluateTypeof = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.evaluateTypeof,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.evaluate = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.evaluate,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.evaluateIdentifier = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.evaluateIdentifier,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.evaluateDefinedIdentifier = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.evaluateDefinedIdentifier,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.evaluateCallExpressionMember = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.evaluateDefinedIdentifier,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION, JavascriptParserHookCallbackParameters.PARAM],
             true);
 
         container.statement = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.statement,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT],
             false);
 
         container.statementIf = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.statementIf,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT],
             false);
 
         container.label = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.label,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT],
             false);
 
         container.import = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.import,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.SOURCE],
             false);
 
         container.importSpecifier = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.importSpecifier,
             WebpackHookType.SyncBailHook,
-            [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.SOURCE, JavascriptParserHookCallbackParameters.EXPORT_NAME , JavascriptParserHookCallbackParameters.IDENTIFIER_NAME],
+            [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.SOURCE, JavascriptParserHookCallbackParameters.EXPORT_NAME, JavascriptParserHookCallbackParameters.IDENTIFIER_NAME],
             false);
 
         container.export = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.export,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT],
             false);
 
         container.exportImport = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.exportImport,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.SOURCE],
             false);
 
         container.exportDeclaration = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.exportDeclaration,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
-        container.exportExpression = new JavascriptParserHook(
-            container,
-            JavascriptParserHookNames.i.exportExpression,
+        container.exportExpression = new JavascriptParserHook(JavascriptParserHookNames.i.exportExpression,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
-        container.exportSpecifier = new JavascriptParserHook(
-            container,
-            JavascriptParserHookNames.i.exportSpecifier,
+        container.exportSpecifier = new JavascriptParserHook(JavascriptParserHookNames.i.exportSpecifier,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.IDENTIFIER_NAME, JavascriptParserHookCallbackParameters.EXPORT_NAME, JavascriptParserHookCallbackParameters.INDEX],
             false);
 
-        container.exportImportSpecifier = new JavascriptParserHook(
-            container,
-            JavascriptParserHookNames.i.exportImportSpecifier,
+        container.exportImportSpecifier = new JavascriptParserHook(JavascriptParserHookNames.i.exportImportSpecifier,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.STATEMENT, JavascriptParserHookCallbackParameters.SOURCE, JavascriptParserHookCallbackParameters.IDENTIFIER_NAME, JavascriptParserHookCallbackParameters.EXPORT_NAME, JavascriptParserHookCallbackParameters.INDEX],
             false);
 
         container.varDeclaration = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.varDeclaration,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
         container.varDeclarationLet = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.varDeclarationLet,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
         container.varDeclarationConst = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.varDeclarationConst,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
         container.varDeclarationVar = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.varDeclarationVar,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.DECLARATION],
             false);
 
         container.canRename = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.canRename,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.rename = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.rename,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.assigned = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.assigned,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.assign = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.assign,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.typeof = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.typeof,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.call = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.call,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.callMemberChain = new JavascriptParserHook(
-                container,
-                JavascriptParserHookNames.i.callMemberChain,
-                WebpackHookType.SyncBailHook,
-                [JavascriptParserHookCallbackParameters.EXPRESSION],
-                true);
+            JavascriptParserHookNames.i.callMemberChain,
+            WebpackHookType.SyncBailHook,
+            [JavascriptParserHookCallbackParameters.EXPRESSION],
+            true);
 
         container.new = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.new,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.expression = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.expression,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             true);
 
         container.expressionConditionalOperator = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.expressionConditionalOperator,
             WebpackHookType.SyncBailHook,
             [JavascriptParserHookCallbackParameters.EXPRESSION],
             false);
 
         container.program = new JavascriptParserHook(
-            container,
             JavascriptParserHookNames.i.program,
             WebpackHookType.SyncBailHook,
             [],

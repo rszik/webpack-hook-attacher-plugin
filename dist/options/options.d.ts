@@ -24,19 +24,16 @@ export declare abstract class HookBase {
     hookName: string;
     webpackHookType: WebpackHookType;
     callbackParameterNames: string[];
-    parent: HookBase;
     addOperations(...operations: Operation[]): void;
 }
 export declare class CompilerHook extends HookBase {
     hookType: HookType;
-    constructor(hookName: string, hookType: WebpackHookType, callbackParameterNames: string[]);
 }
 export declare class CompilationHook extends HookBase {
     hookType: HookType;
-    constructor(parent: ICompilationHooksContainer, hookName: string, hookType: WebpackHookType, parameterNames: string[]);
 }
 export declare class JavascriptParserHook extends HookBase {
-    constructor(parent: IJavascriptParserHooksContainer, hookName: string, hookType: WebpackHookType, parameterNames: string[], forIsMandatory: boolean);
+    constructor(hookName: string, hookType: WebpackHookType, parameterNames: string[], forIsMandatory: boolean);
     hookType: HookType;
     forIsMandatory: boolean;
 }

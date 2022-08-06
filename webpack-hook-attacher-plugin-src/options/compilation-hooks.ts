@@ -1,5 +1,5 @@
 import { Asset, Chunk, Compilation, Compiler, Module } from 'webpack';
-import { CompilationHook, WebpackHookType} from './options';
+import { CompilationHook, WebpackHookType } from './options';
 
 
 // https://webpack.js.org/api/compilation-hooks/
@@ -151,8 +151,8 @@ export class CompilationHookCallbackParameters {
     public error: Error = null;
     public modules: Module[] = null;
     public chunks: Chunk[] = null;
-    public records:  any = null;
-    public compilation: Compilation  = null;
+    public records: any = null;
+    public compilation: Compilation = null;
     public assets: Asset[] = null;
     public chunk: Chunk = null;
     public chunkHash: string = null;
@@ -168,343 +168,287 @@ export class CompilationHookInitializer {
 
     public static initHooks(container: ICompilationHooksContainer): void {
         container.buildModule = new CompilationHook(
-            container,
             CompilationHookNames.i.buildModule,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE]);
 
         container.rebuildModule = new CompilationHook(
-            container,
             CompilationHookNames.i.rebuildModule,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE]);
 
         container.failedModule = new CompilationHook(
-            container,
             CompilationHookNames.i.failedModule,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE, CompilationHookCallbackParameters.ERROR]);
 
         container.succeedModule = new CompilationHook(
-            container,
             CompilationHookNames.i.succeedModule,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE]);
 
         container.finishModules = new CompilationHook(
-            container,
             CompilationHookNames.i.finishModules,
             WebpackHookType.AsyncSeriesHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.finishRebuildingModule = new CompilationHook(
-            container,
             CompilationHookNames.i.finishRebuildingModule,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE]);
 
         container.seal = new CompilationHook(
-            container,
             CompilationHookNames.i.seal,
             WebpackHookType.SyncHook,
             []);
 
         container.unseal = new CompilationHook(
-            container,
             CompilationHookNames.i.unseal,
             WebpackHookType.SyncHook,
             []);
 
         container.optimizeDependencies = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeDependencies,
             WebpackHookType.SyncBailHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.afterOptimizeDependencies = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeDependencies,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.optimize = new CompilationHook(
-            container,
             CompilationHookNames.i.optimize,
             WebpackHookType.SyncHook,
             []);
 
         container.optimizeModules = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeModules,
             WebpackHookType.SyncBailHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.afterOptimizeModules = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeModules,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.optimizeChunks = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeChunks,
             WebpackHookType.SyncBailHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.afterOptimizeChunks = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeChunks,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.optimizeTree = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeTree,
             WebpackHookType.AsyncSeriesHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.MODULES]);
 
         container.afterOptimizeTree = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeTree,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.MODULES]);
 
         container.optimizeChunkModules = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeChunkModules,
             WebpackHookType.SyncBailHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.MODULES]);
 
         container.afterOptimizeChunkModules = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeChunkModules,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.MODULES]);
 
         container.shouldRecord = new CompilationHook(
-            container,
             CompilationHookNames.i.shouldRecord,
             WebpackHookType.SyncBailHook,
             []);
 
         container.reviveModules = new CompilationHook(
-            container,
             CompilationHookNames.i.reviveModules,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES, CompilationHookCallbackParameters.RECORDS]);
 
         container.beforeModuleIds = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeModuleIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.moduleIds = new CompilationHook(
-            container,
             CompilationHookNames.i.moduleIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.optimizeModuleIds = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeModuleIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.afterOptimizeModuleIds = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeModuleIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES]);
 
         container.reviveChunks = new CompilationHook(
-            container,
             CompilationHookNames.i.reviveChunks,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.RECORDS]);
 
         container.beforeChunkIds = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeChunkIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.chunkIds = new CompilationHook(
-            container,
             CompilationHookNames.i.chunkIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.optimizeChunkIds = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeChunkIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.afterOptimizeChunkIds = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeChunkIds,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.recordModules = new CompilationHook(
-            container,
             CompilationHookNames.i.recordModules,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULES, CompilationHookCallbackParameters.RECORDS]);
 
         container.recordChunks = new CompilationHook(
-            container,
             CompilationHookNames.i.recordChunks,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS, CompilationHookCallbackParameters.RECORDS]);
 
         container.beforeModuleHash = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeModuleHash,
             WebpackHookType.SyncHook,
             []);
 
         container.afterModuleHash = new CompilationHook(
-            container,
             CompilationHookNames.i.afterModuleHash,
             WebpackHookType.SyncHook,
             []);
 
         container.beforeHash = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeHash,
             WebpackHookType.SyncHook,
             []);
 
         container.afterHash = new CompilationHook(
-            container,
             CompilationHookNames.i.afterHash,
             WebpackHookType.SyncHook,
             []);
 
         container.recordHash = new CompilationHook(
-            container,
             CompilationHookNames.i.recordHash,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.RECORDS]);
 
         container.record = new CompilationHook(
-            container,
             CompilationHookNames.i.record,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.COMPILATION, CompilationHookCallbackParameters.RECORDS]);
 
         container.beforeModuleAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeModuleAssets,
             WebpackHookType.SyncHook,
             []);
 
         container.additionalChunkAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.additionalChunkAssets,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.shouldGenerateChunkAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.shouldGenerateChunkAssets,
             WebpackHookType.SyncBailHook,
             []);
 
         container.beforeChunkAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.beforeChunkAssets,
             WebpackHookType.SyncHook,
             []);
 
         container.additionalAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.additionalAssets,
             WebpackHookType.AsyncSeriesHook,
             []);
 
         container.optimizeChunkAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeChunkAssets,
             WebpackHookType.AsyncSeriesHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.afterOptimizeChunkAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.afterOptimizeChunkAssets,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNKS]);
 
         container.optimizeAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.optimizeAssets,
             WebpackHookType.AsyncSeriesHook,
             [CompilationHookCallbackParameters.ASSETS]);
 
         container.afterOptimizeAssets = new CompilationHook(
-            container,
+
             CompilationHookNames.i.afterOptimizeAssets,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.ASSETS]);
 
         container.processAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.processAssets,
             WebpackHookType.AsyncSeriesHook,
             [CompilationHookCallbackParameters.ASSETS]);
 
         container.afterProcessAssets = new CompilationHook(
-            container,
             CompilationHookNames.i.afterProcessAssets,
             WebpackHookType.SyncHook,
             []);
 
         container.needAdditionalSeal = new CompilationHook(
-            container,
             CompilationHookNames.i.needAdditionalSeal,
             WebpackHookType.SyncBailHook,
             []);
 
         container.afterSeal = new CompilationHook(
-            container,
             CompilationHookNames.i.afterSeal,
             WebpackHookType.AsyncSeriesHook,
             []);
 
         container.chunkHash = new CompilationHook(
-            container,
             CompilationHookNames.i.chunkHash,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNK, CompilationHookCallbackParameters.CHUNK_HASH]);
 
         container.moduleAsset = new CompilationHook(
-            container,
             CompilationHookNames.i.moduleAsset,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.MODULE, CompilationHookCallbackParameters.FILE_NAME]);
 
         container.chunkAsset = new CompilationHook(
-            container,
             CompilationHookNames.i.chunkAsset,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHUNK, CompilationHookCallbackParameters.FILE_NAME]);
 
         container.assetPath = new CompilationHook(
-            container,
             CompilationHookNames.i.assetPath,
             WebpackHookType.SyncWaterfallHook,
             [CompilationHookCallbackParameters.PATH, CompilationHookCallbackParameters.OPTIONS]);
 
         container.needAdditionalPass = new CompilationHook(
-            container,
             CompilationHookNames.i.needAdditionalPass,
             WebpackHookType.SyncBailHook,
             []);
 
         container.childCompiler = new CompilationHook(
-            container,
             CompilationHookNames.i.childCompiler,
             WebpackHookType.SyncHook,
             [CompilationHookCallbackParameters.CHILD_COMPILER, CompilationHookCallbackParameters.COMPILER_NAME, CompilationHookCallbackParameters.COMPILER_INDEX]);

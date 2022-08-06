@@ -42,12 +42,7 @@ export abstract class HookBase {
     public webpackHookType: WebpackHookType;
     public callbackParameterNames: string[] = [];
 
-    public parent: HookBase;
-
     public addOperations(...operations: Operation[]): void {
-        if (this.parent) {
-            this.parent.operations.push(new ChildOperationWrapperOperation());
-        }
         this.operations.push(...operations);
     }
 }
@@ -56,28 +51,18 @@ export class CompilerHook extends HookBase {
 
     public hookType: HookType = HookType.CompilerHook;
 
-    constructor(hookName: string, hookType: WebpackHookType, callbackParameterNames: string[]) {
-        super(hookName, hookType, callbackParameterNames);
-        this.parent = <HookBase><any>parent;
-    }
-
 }
 
 export class CompilationHook extends HookBase {
 
     public hookType: HookType = HookType.CompilationHook;
 
-    constructor(parent: ICompilationHooksContainer, hookName: string, hookType: WebpackHookType, parameterNames: string[]) {
-        super(hookName, hookType, parameterNames);
-        this.parent = <HookBase><any>parent;
-    }
 }
 
 export class JavascriptParserHook extends HookBase {
 
-    constructor(parent: IJavascriptParserHooksContainer, hookName: string, hookType: WebpackHookType, parameterNames: string[], forIsMandatory: boolean) {
+    constructor(hookName: string, hookType: WebpackHookType, parameterNames: string[], forIsMandatory: boolean) {
         super(hookName, hookType, parameterNames);
-        this.parent = <HookBase><any>parent;
         this.forIsMandatory = forIsMandatory;
     }
 

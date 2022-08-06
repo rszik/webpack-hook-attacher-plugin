@@ -1,7 +1,7 @@
 {
     "name": "@wecdev/webpack-hook-attacher-plugin",
     "description": "With this plugin you can attach own or predefined file/directory (copy, create, rename, merge, replace in etc...) or predefined system (sleep, run process, etc...) operations to any webpack hook. We created this plugin because it is difficult to find file operation webpack plugins that runs in the proper phase of our buid process: delete build folder, copy files BEFORE the build process, copy files, replace in files, merge JSON files, zip build folder AFTER build process.",
-    "version": "5740.0.4",
+    "version": "5740.0.5",
     "author": {
         "name": "Roland Szikora",
         "email": "roland.szikora@wecdev.com",

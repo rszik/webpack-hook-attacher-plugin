@@ -35,34 +35,28 @@ class HookBase {
         this.callbackParameterNames = callbackParameterNames;
     }
     addOperations(...operations) {
-        if (this.parent) {
-            this.parent.operations.push(new ChildOperationWrapperOperation());
-        }
         this.operations.push(...operations);
     }
 }
 exports.HookBase = HookBase;
 class CompilerHook extends HookBase {
-    constructor(hookName, hookType, callbackParameterNames) {
-        super(hookName, hookType, callbackParameterNames);
+    constructor() {
+        super(...arguments);
         this.hookType = operation_1.HookType.CompilerHook;
-        this.parent = parent;
     }
 }
 exports.CompilerHook = CompilerHook;
 class CompilationHook extends HookBase {
-    constructor(parent, hookName, hookType, parameterNames) {
-        super(hookName, hookType, parameterNames);
+    constructor() {
+        super(...arguments);
         this.hookType = operation_1.HookType.CompilationHook;
-        this.parent = parent;
     }
 }
 exports.CompilationHook = CompilationHook;
 class JavascriptParserHook extends HookBase {
-    constructor(parent, hookName, hookType, parameterNames, forIsMandatory) {
+    constructor(hookName, hookType, parameterNames, forIsMandatory) {
         super(hookName, hookType, parameterNames);
         this.hookType = operation_1.HookType.JavascriptParserHook;
-        this.parent = parent;
         this.forIsMandatory = forIsMandatory;
     }
 }
