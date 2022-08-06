@@ -5,12 +5,12 @@ With this plugin you can attach own or predefined file/directory (copy, create, 
 If you have found bug or need an additional operation don't hesitate to contact me.
 
 ## Install
-`npm install webpack-hook-attacher-plugin --save-dev `
+`npm i @wecdev/webpack-hook-attacher-plugin --save-dev`
 
 ## Use Opertaions 
 You can attach predefined operations to any webpack hook during the webpack or webpack-dev-server build 
-[file operations](https://www.npmjs.com/package/webpack-file-operations) or
-[system operations](https://www.npmjs.com/package/webpack-system-operations)
+[file operations](https://www.npmjs.com/package/@wecdev/webpack-file-operations) or
+[system operations](https://www.npmjs.com/package/@wecdev/webpack-system-operations)
 
 such as 
 - create file/directory
@@ -47,7 +47,7 @@ You can write your own operation if you like. Create your Operation file (derive
 import * as fsExtra from 'fs-extra';
 
 import { SingleSourceOperationParameter, SingleSourceOperation, ISingleSourceOperationParameter } from './single-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 export interface IMoveSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
