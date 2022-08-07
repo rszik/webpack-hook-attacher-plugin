@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 import { TapType, Operation } from '../operation-base-classes';
 import { ICompilerHooksContainer } from './compiler-hooks';
 import { ICompilationHooksContainer } from './compilation-hooks';

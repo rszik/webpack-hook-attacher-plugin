@@ -1,13 +1,26 @@
 # webpack-hook-attacher-plugin Summary
 With this plugin you can attach own or predefined file/directory (copy, create, rename, merge, replace in etc...) or predefined system (sleep, run process, etc...) operations to any webpack hook. We created this plugin because it is difficult to find file operation webpack plugins that runs in the proper phase of our buid process: delete build folder, copy files BEFORE the build process, copy files, replace in files, merge JSON files, zip build folder AFTER build process.
 
-## I know I can do better :)
-If you have found bug or need an additional operation don't hesitate to contact me.
-
 ## Install
 `npm i @wecdev/webpack-hook-attacher-plugin --save-dev`
 
-## Use Opertaions 
+## I know I can do better :)
+If you have found bug or need an additional operation don't hesitate to contact me.
+
+## Copyright & Support
+Copyright (c) 2022, Roland Szikora. 
+You can support this package at https://www.patreon.com/rolandszik 
+
+## Licensing
+This project run under AGPL-3.0
+
+Full license
+https://www.gnu.org/licenses/agpl-3.0.txt
+
+TLDR
+https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)
+
+## Use Operations 
 You can attach predefined operations to any webpack hook during the webpack or webpack-dev-server build 
 [file operations](https://www.npmjs.com/package/@wecdev/webpack-file-operations) or
 [system operations](https://www.npmjs.com/package/@wecdev/webpack-system-operations)

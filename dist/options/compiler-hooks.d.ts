@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 import { Compilation, Compiler, Entry, Stats } from 'webpack';
 import { LogType } from 'webpack/lib/logging/Logger';
 import { CompilerHook } from './options';

@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import { ConsoleLogger, Utils } from './classes';
 import { Options, HookBase, WebpackHookType, JavascriptParserHook } from './options';
 import { Operation, TapType } from './operation-base-classes';

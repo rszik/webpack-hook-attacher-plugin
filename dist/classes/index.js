@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = exports.ConsoleLogger = void 0;
 var console_logger_1 = require("./console-logger");

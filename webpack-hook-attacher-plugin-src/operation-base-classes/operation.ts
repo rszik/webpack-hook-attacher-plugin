@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import { ConsoleLogger, Utils } from '../classes';
 import { CompilerHookCallbackParameters, CompilationHookCallbackParameters, JavascriptParserHookCallbackParameters, CompilationHook } from '../options';
 
@@ -10,8 +15,8 @@ export enum TapType {
 
 export enum HookType {
     CompilerHook = 'CompilerHook',
-    CompilationHook= 'CompilationHook',
-    JavascriptParserHook= 'JavascriptParserHook',
+    CompilationHook = 'CompilationHook',
+    JavascriptParserHook = 'JavascriptParserHook',
 }
 
 export interface IOperationParameter {
@@ -30,7 +35,7 @@ export class OperationParameter implements IOperationParameter {
     public tapForParameter?: string = null;
 }
 
-export abstract class Operation  {
+export abstract class Operation {
 
     public firstOperationInTheHook: boolean = false;
     public lastOperationInTheHook: boolean = false;
@@ -53,7 +58,7 @@ export abstract class Operation  {
         if (operation.firstOperationInTheHook) {
             ConsoleLogger.consoleInfo(`Running ${Utils.capitalizeFirstLetter(this.hookName)} Operations`, null, true);
         }
-        let postFix: string = this.params.additionalName != null ?  ' - ' + this.params.additionalName : '';
+        let postFix: string = this.params.additionalName != null ? ' - ' + this.params.additionalName : '';
         ConsoleLogger.consoleInfo(`Start   ${this.name}${postFix}`);
         ConsoleLogger.consoleDebug(`${this.name} - \nthis.params: ${Utils.formattedJSONStringify(this.params)}`);
         try {
@@ -72,8 +77,8 @@ export abstract class Operation  {
     }
 
     protected initConsoleLoggerToCurrentOperation(): void {
-         //override the original settings
-         if (this.params.verbose != null) {
+        //override the original settings
+        if (this.params.verbose != null) {
             ConsoleLogger.verbose = this.params.verbose;
         }
         if (this.params.silent != null) {

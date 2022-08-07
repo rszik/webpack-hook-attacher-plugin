@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import { JavascriptParserHook, WebpackHookType } from './options';
 
 // https://webpack.js.org/api/parser/#hooks

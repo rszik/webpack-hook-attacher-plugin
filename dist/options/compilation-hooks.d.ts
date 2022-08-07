@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 import { Asset, Chunk, Compilation, Compiler, Module } from 'webpack';
 import { CompilationHook } from './options';
 export interface ICompilationHooksContainer {

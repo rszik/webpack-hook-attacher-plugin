@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Operation = exports.OperationParameter = exports.HookType = exports.TapType = void 0;
 const classes_1 = require("../classes");

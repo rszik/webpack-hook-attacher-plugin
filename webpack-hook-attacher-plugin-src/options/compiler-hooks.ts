@@ -1,7 +1,12 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import { Compilation, Compiler, Entry, Stats } from 'webpack';
 import { LogType } from 'webpack/lib/logging/Logger';
 import { CompilerHook } from './options';
-import { WebpackHookType} from './options';
+import { WebpackHookType } from './options';
 
 // https://webpack.js.org/api/compiler-hooks/#entryoption
 
@@ -98,7 +103,7 @@ export class CompilerHookCallbackParameters {
     public context: string = null;
     public entry: Entry = null;
     public compiler: Compiler = null;
-    public normalModuleFactory: any  = null;
+    public normalModuleFactory: any = null;
     public contextModuleFactory: any = null;
     public compilationParams: { normalModuleFactory: any, contextModuleFactory: any } = null;
     public compilation: Compilation = null;

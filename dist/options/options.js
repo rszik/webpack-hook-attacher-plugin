@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Options = exports.JavascriptParserHook = exports.CompilationHook = exports.CompilerHook = exports.HookBase = exports.ChildOperationWrapperOperation = exports.WebpackHookType = void 0;
 const operation_base_classes_1 = require("../operation-base-classes");

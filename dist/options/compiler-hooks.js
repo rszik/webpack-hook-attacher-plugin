@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CompilerHookInitializer = exports.CompilerHookCallbackParameters = exports.CompilerHookNames = void 0;
 const options_1 = require("./options");

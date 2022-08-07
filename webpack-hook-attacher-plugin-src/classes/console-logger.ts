@@ -1,7 +1,11 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 //TODO: colors.brightXY is unavailabe when using import
 //TODO: check later in the new version
 //TODO: write an issue to the developer
-
 import { Utils } from '.';
 const colors: any = require('colors/safe');
 
@@ -13,7 +17,7 @@ export class ConsoleLogger {
     public static consoleDebug(text: string, obj?: any, forceLog: boolean = false): void {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent && ConsoleLogger.verbose) {
-            console.log(colors.brightWhite('WebpackHookAttacherPlugin - Debug\n') +  colors.brightWhite(text));
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - Debug\n') + colors.brightWhite(text));
             if (obj) {
                 console.log(colors.brightGreen(Utils.formattedJSONStringify(obj)));
             }
@@ -23,7 +27,7 @@ export class ConsoleLogger {
     public static consoleInfo(text: string, obj?: any, forceLog: boolean = false): void {
         ConsoleLogger.clearCurrentCursorLine();
         if (forceLog || !ConsoleLogger.silent) {
-            console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text) );
+            console.log(colors.brightWhite('WebpackHookAttacherPlugin - ') + colors.brightGreen('Info    - ') + colors.brightGreen(text));
             if (obj) {
                 console.log(colors.brightGreen(Utils.formattedJSONStringify(obj)));
             }

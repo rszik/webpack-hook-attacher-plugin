@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 export class Utils {
 
     public static mergeUserSettingsToDeafultSetting(userParameterObject: any, defaultParameterObject: any): any {
@@ -11,7 +16,7 @@ export class Utils {
 
     public static capitalizeFirstLetter(s: string): string {
         return s.charAt(0).toUpperCase() + s.slice(1);
-      }
+    }
 
     public static arraySortNumberFunc(a: number, b: number): number {
         return a - b;

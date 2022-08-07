@@ -1,5 +1,9 @@
-import { TapType, Operation, OperationParameter } from '../operation-base-classes';
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 
+import { TapType, Operation, OperationParameter } from '../operation-base-classes';
 import { CompilerHookInitializer, ICompilerHooksContainer } from './compiler-hooks';
 import { CompilationHookInitializer, ICompilationHooksContainer } from './compilation-hooks';
 import { HookType } from '../operation-base-classes/operation';
